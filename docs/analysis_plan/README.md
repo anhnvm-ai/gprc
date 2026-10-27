@@ -4,6 +4,7 @@
 |---|---|
 | `analysis_plan_2026-10-13_translation.md` | English translation of the analysis plan frozen on 13 October 2026 |
 | `addendum_2026-10-27.md` | Plan of the additional analyses in version 1.1 of the paper, fixed before they were run |
+| `addendum_results.md` | Results of these analyses, read under the decision rules of the addendum |
 
 ## Status of the analysis plan
 
@@ -31,7 +32,8 @@ From the internal project log and the times of the output files (local time, UTC
 | 13 Oct 2026, afternoon | New analyses and Monte Carlo study run (output files dated 15:20 to 18:55) |
 | 27 Oct 2026 | Diagnostics on tails and serial dependence (`extra/diag_round3_premise.py`, exploratory) |
 | 27 Oct 2026 | Analysis plan published in this repository |
-| 27 Oct 2026 | Addendum approved by all authors and published, before its analyses were run (see the commit history) |
+| 27 Oct 2026, 12:15 | Addendum approved by all authors and published, before its analyses were run (see the commit history) |
+| 27 Oct 2026, 12:27 to 13:48 | Analyses of the addendum run (output files in `stage2/results/mc/`); results in `addendum_results.md` |
 
 ## Changes after the plan
 

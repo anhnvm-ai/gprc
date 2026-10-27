@@ -1,0 +1,16 @@
+{
+ "identical": true,
+ "columns": [
+  "rep",
+  "ok",
+  "b3",
+  "dk4_p",
+  "dk4_se",
+  "gr_se",
+  "gr_se_iqr",
+  "gr_p",
+  "gr_B",
+  "gr_degenerate"
+ ],
+ "max_abs_diff_of_differing_columns": {}
+}

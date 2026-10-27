@@ -1,0 +1,32 @@
+{
+ "observed_top5_share": 0.5278392847893602,
+ "grid": {
+  "2.5": {
+   "n": 200,
+   "median_top5_share": 0.30941523894178646,
+   "median_kurt_gprc": 9.373842744481514
+  },
+  "3": {
+   "n": 200,
+   "median_top5_share": 0.26877615233649643,
+   "median_kurt_gprc": 5.258221981903115
+  },
+  "4": {
+   "n": 200,
+   "median_top5_share": 0.22890453644318765,
+   "median_kurt_gprc": 2.568617091607044
+  },
+  "5": {
+   "n": 200,
+   "median_top5_share": 0.21409486235214584,
+   "median_kurt_gprc": 1.427156853407387
+  },
+  "8": {
+   "n": 200,
+   "median_top5_share": 0.19548886770406504,
+   "median_kurt_gprc": 0.6019756749920819
+  }
+ },
+ "chosen_nu": 2.5,
+ "rule": "nu in NU_GRID with median top-5 share (reps 0-199) closest to the observed share"
+}
