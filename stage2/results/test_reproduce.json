@@ -1,0 +1,200 @@
+{
+ "checks": [
+  {
+   "test": "b3",
+   "got": -0.1707523801592422,
+   "want": -0.17075238015924196,
+   "ok": true
+  },
+  {
+   "test": "HC3 SE",
+   "got": 0.08265672224799475,
+   "want": 0.08265672224799467,
+   "ok": true
+  },
+  {
+   "test": "calendar-month cluster SE",
+   "got": 0.08923028753526663,
+   "want": 0.08923028753526649,
+   "ok": true
+  },
+  {
+   "test": "DK4 SE",
+   "got": 0.07996591906060445,
+   "want": 0.07996591906060445,
+   "ok": true
+  },
+  {
+   "test": "DK6 SE",
+   "got": 0.0823233903946151,
+   "want": 0.0823233903946151,
+   "ok": true
+  },
+  {
+   "test": "DK12 SE",
+   "got": 0.08801946705465162,
+   "want": 0.08801946705465162,
+   "ok": true
+  },
+  {
+   "test": "b3 (no persistence)",
+   "got": -0.11067596262772156,
+   "want": -0.11067596262772078,
+   "ok": true
+  },
+  {
+   "test": "DK4 p (no persistence)",
+   "got": 0.1918303716898584,
+   "want": 0.1918303716898615,
+   "ok": true
+  },
+  {
+   "test": "wild cluster rademacher: ms7 p within [strict, with ties]",
+   "got": [
+    0.0,
+    0.06706706706706707
+   ],
+   "want": 0.04,
+   "ok": true
+  },
+  {
+   "test": "wild cluster webb: ms7 p within [strict, with ties]",
+   "got": [
+    0.023023023023023025,
+    0.025025025025025027
+   ],
+   "want": 0.023,
+   "ok": true
+  },
+  {
+   "test": "wild by month p",
+   "got": 0.1401,
+   "want": 0.1401,
+   "ok": true
+  },
+  {
+   "test": "moving-block bootstrap p",
+   "got": 0.1723,
+   "want": 0.1723,
+   "ok": true
+  },
+  {
+   "test": "moving-block bootstrap SE (Table A2: 0.124)",
+   "got": 0.124,
+   "want": 0.124,
+   "ok": true
+  },
+  {
+   "test": "smoothed P>0.5 equals stored regime (share of months)",
+   "got": 1.0,
+   "want": 1.0,
+   "ok": true
+  },
+  {
+   "test": "filtered regime b3",
+   "got": -0.2260225556476391,
+   "want": -0.2260225556476397,
+   "ok": true
+  },
+  {
+   "test": "filtered regime DK4 p",
+   "got": 0.008315874534668755,
+   "want": 0.008315874534668533,
+   "ok": true
+  },
+  {
+   "test": "DML shuffled theta",
+   "got": -0.15919347997284705,
+   "want": -0.15919347997284705,
+   "ok": true
+  },
+  {
+   "test": "DML shuffled iid SE",
+   "got": 0.06997015642545484,
+   "want": 0.06997015642545484,
+   "ok": true
+  },
+  {
+   "test": "DML shuffled DK4 SE",
+   "got": 0.06062156529828224,
+   "want": 0.06062156529828223,
+   "ok": true
+  },
+  {
+   "test": "DML blocked theta",
+   "got": -0.20187539160936954,
+   "want": -0.20187539160936954,
+   "ok": true
+  },
+  {
+   "test": "DML blocked iid SE",
+   "got": 0.08196971258346557,
+   "want": 0.08196971258346557,
+   "ok": true
+  },
+  {
+   "test": "DML blocked DK4 SE",
+   "got": 0.0723952631134081,
+   "want": 0.0723952631134081,
+   "ok": true
+  },
+  {
+   "test": "LOCO OLS b3",
+   "got": -0.15200936372939408,
+   "want": -0.15200936372939391,
+   "ok": true
+  },
+  {
+   "test": "LOCO OLS DK4 p",
+   "got": 0.06614443200639175,
+   "want": 0.06614443200639197,
+   "ok": true
+  },
+  {
+   "test": "LOCO time-aware DML theta",
+   "got": -0.12763494425698235,
+   "want": -0.12763494425698235,
+   "ok": true
+  },
+  {
+   "test": "LOCO time-aware DML DK4 p",
+   "got": 0.03504440572370204,
+   "want": 0.03504440572370204,
+   "ok": true
+  },
+  {
+   "test": "balanced b3",
+   "got": -0.2044975834500679,
+   "want": -0.2044975834500679,
+   "ok": true
+  },
+  {
+   "test": "balanced DK4 p",
+   "got": 0.021027405352378903,
+   "want": 0.021027405352378903,
+   "ok": true
+  }
+ ],
+ "passed": 28,
+ "total": 28,
+ "wild_cluster_ties": {
+  "rademacher": {
+   "ms7_p": 0.04,
+   "strict": 0.0,
+   "with_ties": 0.06706706706706707,
+   "n_tie_draws": 67
+  },
+  "webb": {
+   "ms7_p": 0.023,
+   "strict": 0.023023023023023025,
+   "with_ties": 0.025025025025025027,
+   "n_tie_draws": 2
+  },
+  "rademacher_enumerated_all_32_patterns": 0.0625
+ },
+ "new_procedures_on_real_data": {
+  "dk4_fixedb_p": 0.03976000000000002,
+  "wcb_rademacher_enumerated_p": 0.0625,
+  "wcb_webb_B999_ties_counted_p": 0.025025025025025027
+ }
+}

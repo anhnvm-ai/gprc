@@ -1,0 +1,5 @@
+channel,channel_label,beta_std,se,t_stat,p_value,signif,abs_beta,rank
+log_rv_lag1,Volatility persistence (logRV_t),0.3434,0.0374,9.176,0.0,***,0.34343269533530413,1
+vix_m,VIX (global risk),-0.184,0.0296,-6.211,0.0,***,0.18404116010117794,2
+dlog_fx_m,FX shock (dlogFX),0.0773,0.0247,3.13,0.0017,***,0.07726667785143825,3
+gpr_country,GPR country-specific,-0.0248,0.0228,-1.088,0.2768,,0.024788159432363406,4

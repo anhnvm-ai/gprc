@@ -1,0 +1,6 @@
+metric,value
+pooled_b3_std,-0.1695
+avg_sd_logrv_lead,0.4159
+delta_logrv_per_1SD_GPR,-0.0705
+pct_RV_change_per_1SD_GPR,-6.81
+avg_RV_level,0.1444

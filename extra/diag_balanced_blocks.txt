@@ -1,0 +1,12 @@
+--- baseline regime, unbalanced panel: 946 obs, 195 months, 37 stress months
+  block 1: 2010-01 to 2013-03, 39 months, 166 obs, stress months 6, stress obs 24
+  block 2: 2013-04 to 2016-06, 39 months, 195 obs, stress months 8, stress obs 40
+  block 3: 2016-07 to 2019-09, 39 months, 195 obs, stress months 3, stress obs 15
+  block 4: 2019-10 to 2022-12, 39 months, 195 obs, stress months 15, stress obs 75
+  block 5: 2023-01 to 2026-03, 39 months, 195 obs, stress months 5, stress obs 25
+--- balanced sample, baseline stress share: 830 obs, 166 months, 31 stress months
+  block 1: 2012-06 to 2015-03, 34 months, 170 obs, stress months 4, stress obs 20
+  block 2: 2015-04 to 2017-12, 33 months, 165 obs, stress months 3, stress obs 15
+  block 3: 2018-01 to 2020-09, 33 months, 165 obs, stress months 10, stress obs 50
+  block 4: 2020-10 to 2023-06, 33 months, 165 obs, stress months 8, stress obs 40
+  block 5: 2023-07 to 2026-03, 33 months, 165 obs, stress months 6, stress obs 30

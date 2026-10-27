@@ -1,0 +1,13 @@
+regime,challenger,CW_t,CW_p,CW_sig
+All,M1_+GPRC,1.069,0.142,
+All,M2_+VIX,2.268,0.012,**
+All,M3_+FX,2.258,0.012,**
+All,M4_Full,3.073,0.001,***
+Calm,M1_+GPRC,0.963,0.168,
+Calm,M2_+VIX,1.959,0.025,**
+Calm,M3_+FX,3.375,0.0,***
+Calm,M4_Full,3.461,0.0,***
+Stress,M1_+GPRC,0.464,0.321,
+Stress,M2_+VIX,1.238,0.108,
+Stress,M3_+FX,-1.154,0.876,
+Stress,M4_Full,0.03,0.488,

@@ -1,0 +1,7 @@
+regime_def,unit,switching_var,llf,mu_calm,mu_stress,rv_calm,rv_stress,n_stress,n_total,pct_stress,p_stay_calm,p_stay_stress,dur_calm,dur_stress
+COMMON_ASEAN,regional_avg,False,-37.68,-2.16,-1.597,0.115,0.202,38,196,19.4,0.931,0.766,14.5,4.3
+COUNTRY,VNM,False,-86.47,-2.215,-1.521,0.109,0.219,75,167,44.9,0.817,0.775,5.5,4.5
+COUNTRY,THA,False,-89.8,-2.301,-1.71,0.1,0.181,77,196,39.3,0.953,0.939,21.3,16.4
+COUNTRY,IDN,False,-87.4,-2.1,-1.206,0.123,0.299,26,196,13.3,0.94,0.651,16.6,2.9
+COUNTRY,MYS,False,-78.73,-2.665,-2.088,0.07,0.124,74,196,37.8,0.915,0.869,11.7,7.6
+COUNTRY,PHL,False,-60.55,-1.881,-1.029,0.152,0.357,8,196,4.1,0.985,0.695,65.7,3.3

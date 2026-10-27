@@ -1,0 +1,21 @@
+country,country_label,channel,channel_label,beta_std,se,p_value,signif,n_obs
+VNM,Vietnam,log_rv_lag1,Volatility persistence (logRV_t),0.3035,0.114,0.0078,***,166
+VNM,Vietnam,gpr_country,GPR country-specific,-0.1561,0.0878,0.0753,*,166
+VNM,Vietnam,vix_m,VIX (global risk),-0.0858,0.1843,0.6417,,166
+VNM,Vietnam,dlog_fx_m,FX shock (dlogFX),0.139,0.095,0.1434,,166
+THA,Thailand,log_rv_lag1,Volatility persistence (logRV_t),0.2936,0.09,0.0011,***,195
+THA,Thailand,gpr_country,GPR country-specific,-0.0448,0.0598,0.4537,,195
+THA,Thailand,vix_m,VIX (global risk),-0.1971,0.1113,0.0766,*,195
+THA,Thailand,dlog_fx_m,FX shock (dlogFX),0.036,0.0637,0.5719,,195
+IDN,Indonesia,log_rv_lag1,Volatility persistence (logRV_t),0.2344,0.089,0.0084,***,195
+IDN,Indonesia,gpr_country,GPR country-specific,0.0024,0.0512,0.9627,,195
+IDN,Indonesia,vix_m,VIX (global risk),-0.118,0.1238,0.3406,,195
+IDN,Indonesia,dlog_fx_m,FX shock (dlogFX),0.0852,0.0506,0.0922,*,195
+MYS,Malaysia,log_rv_lag1,Volatility persistence (logRV_t),0.1337,0.0922,0.1471,,195
+MYS,Malaysia,gpr_country,GPR country-specific,0.0087,0.172,0.9595,,195
+MYS,Malaysia,vix_m,VIX (global risk),-0.0053,0.1395,0.9697,,195
+MYS,Malaysia,dlog_fx_m,FX shock (dlogFX),0.0956,0.0735,0.1934,,195
+PHL,Philippines,log_rv_lag1,Volatility persistence (logRV_t),0.1161,0.1002,0.2465,,195
+PHL,Philippines,gpr_country,GPR country-specific,-0.0505,0.0604,0.4027,,195
+PHL,Philippines,vix_m,VIX (global risk),-0.0949,0.1513,0.5305,,195
+PHL,Philippines,dlog_fx_m,FX shock (dlogFX),-0.0087,0.0856,0.9186,,195

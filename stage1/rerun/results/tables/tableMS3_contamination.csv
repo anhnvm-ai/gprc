@@ -1,0 +1,4 @@
+spec,treatment,theta,se,p_value,signif,n_obs
+GPRC x Stress (no persist ctrl),gpr_x_stress,-0.094,0.0704,0.1818,,946
+GPRC x Stress (+ persist ctrl),gpr_x_stress,-0.1592,0.07,0.0229,**,946
+GPRC main (+ persist ctrl),gpr_country_z,-0.0576,0.0267,0.0312,**,946

@@ -1,0 +1,6 @@
+country,country_label,gpr_x_stress,se,p_value,signif,n_stress
+VNM,Vietnam,-0.0753,0.1364,0.581,,31
+THA,Thailand,-0.1342,0.0895,0.1336,,37
+IDN,Indonesia,-0.3424,0.1846,0.0636,*,37
+MYS,Malaysia,-0.5964,0.5406,0.2699,,37
+PHL,Philippines,-0.3394,0.3266,0.2987,,37

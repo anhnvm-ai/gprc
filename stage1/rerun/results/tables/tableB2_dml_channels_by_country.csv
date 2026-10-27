@@ -1,0 +1,21 @@
+country,country_label,channel,channel_label,ml,theta,se,p_value,signif,ci_lower,ci_upper,n_obs,p_bh
+VNM,Vietnam,log_rv_lag1,Volatility Persistence,lasso,0.3939,0.0863,0.0,***,0.2247,0.563,166,0.0
+THA,Thailand,log_rv_lag1,Volatility Persistence,lasso,0.6684,0.0722,0.0,***,0.5268,0.81,195,0.0
+IDN,Indonesia,log_rv_lag1,Volatility Persistence,lasso,0.4983,0.0737,0.0,***,0.3538,0.6427,195,0.0
+MYS,Malaysia,log_rv_lag1,Volatility Persistence,lasso,0.3878,0.0849,0.0,***,0.2213,0.5542,195,0.0
+PHL,Philippines,log_rv_lag1,Volatility Persistence,lasso,0.3231,0.0922,0.0005,***,0.1424,0.5037,195,0.0005
+VNM,Vietnam,gpr_country,GPR Country,lasso,-0.1385,0.0593,0.0196,**,-0.2548,-0.0222,166,0.08166666666666668
+THA,Thailand,gpr_country,GPR Country,lasso,-0.088,0.0447,0.049,**,-0.1756,-0.0004,195,0.08166666666666668
+IDN,Indonesia,gpr_country,GPR Country,lasso,-0.0795,0.0517,0.1244,,-0.1809,0.0219,195,0.1555
+MYS,Malaysia,gpr_country,GPR Country,lasso,-0.0114,0.0547,0.835,,-0.1187,0.0959,195,0.835
+PHL,Philippines,gpr_country,GPR Country,lasso,-0.1078,0.052,0.0382,**,-0.2098,-0.0059,195,0.08166666666666668
+VNM,Vietnam,vix_m,VIX (Global Risk),lasso,0.1781,0.0729,0.0146,**,0.0351,0.321,166,0.041999999999999996
+THA,Thailand,vix_m,VIX (Global Risk),lasso,-0.0499,0.0631,0.4287,,-0.1735,0.0737,195,0.535875
+IDN,Indonesia,vix_m,VIX (Global Risk),lasso,-0.0054,0.0637,0.9324,,-0.1303,0.1195,195,0.9324
+MYS,Malaysia,vix_m,VIX (Global Risk),lasso,0.2066,0.0864,0.0168,**,0.0372,0.376,195,0.041999999999999996
+PHL,Philippines,vix_m,VIX (Global Risk),lasso,0.0976,0.0821,0.2348,,-0.0634,0.2585,195,0.39133333333333337
+VNM,Vietnam,dlog_fx_m,FX Shock,lasso,0.1291,0.0794,0.1042,,-0.0266,0.2848,166,0.17366666666666666
+THA,Thailand,dlog_fx_m,FX Shock,lasso,0.081,0.0631,0.1995,,-0.0427,0.2046,195,0.249375
+IDN,Indonesia,dlog_fx_m,FX Shock,lasso,0.1073,0.0437,0.0141,**,0.0216,0.1929,195,0.0705
+MYS,Malaysia,dlog_fx_m,FX Shock,lasso,0.1088,0.0623,0.081,*,-0.0134,0.2309,195,0.17366666666666666
+PHL,Philippines,dlog_fx_m,FX Shock,lasso,-0.0365,0.0827,0.6594,,-0.1985,0.1256,195,0.6594

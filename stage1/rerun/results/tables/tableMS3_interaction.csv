@@ -1,0 +1,8 @@
+spec,term,beta,se,p_value,signif,n
+WITHOUT logRV_t,GPRC (b1),-0.0401,0.0266,0.1312,,946
+WITHOUT logRV_t,Stress (b2),0.8566,0.1654,0.0,***,946
+WITHOUT logRV_t,GPRC x Stress (b3),-0.1107,0.0452,0.0144,**,946
+WITH logRV_t,GPRC (b1),-0.0339,0.0153,0.0269,**,946
+WITH logRV_t,Stress (b2),0.5087,0.1203,0.0,***,946
+WITH logRV_t,GPRC x Stress (b3),-0.1708,0.0423,0.0001,***,946
+WITH logRV_t,logRV_t (b4),0.391,0.0618,0.0,***,946

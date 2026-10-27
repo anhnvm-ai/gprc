@@ -1,0 +1,94 @@
+# =============================================================
+# Master configuration for Hybrid SVR-LSTM-Transformer project
+# =============================================================
+
+project:
+  name: hybrid-slt-gpr-fx-vn
+  random_seed: 42
+  seed_list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]   # full set; multi-seed runner uses subset for speed
+  device: auto              # auto | cpu | cuda
+
+paths:
+  root: "."
+  raw: "data/raw"
+  interim: "data/interim"
+  processed: "data/processed"
+  results: "results"
+  mlruns: "mlruns"
+
+data:
+  start_date:       "2015-01-02"
+  start_date_asean: "2010-01-01"
+  end_date:         "2026-04-30"
+  vn_indices:
+    - VNINDEX
+    - HNXINDEX
+    - VN30
+    - HNX30
+  fx_ticker:  "VND=X"        # USD/VND via yfinance
+  oil_ticker: "CL=F"         # WTI
+  vix_ticker: "^VIX"
+  us10y_ticker: "^TNX"
+  gpr_daily_url:    "https://www.matteoiacoviello.com/gpr_files/data_gpr_daily_recent.xls"
+  gpr_monthly_url:  "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls"
+  ai_gpr_daily_url: "https://www.matteoiacoviello.com/ai_gpr_files/ai_gpr_data_daily.csv"
+  ai_gpr_country_url: "https://www.matteoiacoviello.com/ai_gpr_files/ai_gpr_country.csv"
+
+features:
+  lookback: 22               # ~1 trading month
+  lags: [1, 2, 3, 5, 10, 22]
+  vol_window: 21
+  use_garch: true
+  interaction_terms:
+    - ["GPRD", "dlog_FX"]
+    - ["AI_GPR", "dlog_FX"]
+  scaler: "standard"         # standard | minmax
+
+split:
+  train_end: "2020-12-31"
+  val_end:   "2021-12-31"
+  test_start: "2022-01-01"
+  walk_forward:
+    refit_freq: "Q"          # quarterly retrain (≈17 folds 2022-2026)
+    purge_days: 22
+    embargo_days: 5
+
+models:
+  svr:
+    kernel: rbf
+    C_grid:       [0.1, 1, 10, 100]
+    epsilon_grid: [0.001, 0.01, 0.1]
+    gamma_grid:   ["scale", 0.01, 0.1]
+  lstm:
+    hidden: 64
+    layers: 2
+    dropout: 0.2
+    lr: 1.0e-3
+    batch_size: 64
+    epochs: 200
+    patience: 15
+  transformer:
+    d_model: 64
+    n_heads: 4
+    n_layers: 2
+    ff_dim: 128
+    dropout: 0.1
+    lr: 5.0e-4
+    batch_size: 64
+    epochs: 200
+    patience: 15
+  hybrid:
+    meta_learner: "ridge_constrained"   # non-neg, sum-to-1
+    optuna_trials: 50
+
+evaluation:
+  horizons: [1, 5, 22]
+  metrics: ["RMSE", "MAE", "MAPE", "DA", "QLIKE"]
+  tests:   ["DM", "GW", "MCS"]
+  bootstrap_iters: 5000
+
+backtest:
+  cost_bps: 10
+  vol_target_annual: 0.15
+  liquidity_min_adv_vnd: 5.0e9   # 5 bn VND average daily value
+  rebalance: "daily"

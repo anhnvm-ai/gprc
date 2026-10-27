@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+stage2/results/cache/
+stage2/results/logs/
+data/interim/

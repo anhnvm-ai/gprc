@@ -1,0 +1,7 @@
+placebo,b3_true,placebo_mean,placebo_sd,empirical_p,verdict
+Random shuffle (1000x),-0.1708,-0.0081,0.0853,0.041,PASS
+Return placebo,0.1272,,0.1085,0.2411,PASS (risk channel)
+Phase-shift -6m,0.101,,0.0767,0.1876,weakened
+Phase-shift -3m,0.0244,,0.1376,0.8591,weakened
+Phase-shift +3m,0.0366,,0.0791,0.6438,weakened
+Phase-shift +6m,0.0343,,0.0589,0.5603,weakened

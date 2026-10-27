@@ -1,0 +1,9 @@
+method,b3,se,t,p_value,sig
+Cluster by country (G=5),-0.1708,0.0423,-4.035,0.0001,***
+Cluster by time (G=196),-0.1708,0.0892,-1.914,0.0557,*
+HC3 robust,-0.1708,0.0827,-2.066,0.0388,**
+Driscoll-Kraay (NW4),-0.1708,0.08,-2.135,0.0327,**
+"Wild Cluster Boot (Rademacher, G=5)",-0.1708,,-4.035,0.04,**
+"Wild Cluster Boot (Webb6, G=5)",-0.1708,,-4.035,0.023,**
+Wild Boot by time (G=196),-0.1708,,-1.914,0.1401,
+"Block Boot (6m, B=499)",-0.1708,0.1242,-1.375,0.1723,

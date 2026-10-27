@@ -1,0 +1,6 @@
+country,country_label,theta,se,p_value,signif,ci_lower,ci_upper,n_obs
+VNM,Vietnam,-0.0297,0.1117,0.7903,,-0.2486,0.1892,166
+THA,Thailand,-0.1179,0.1076,0.2734,,-0.3288,0.0931,195
+IDN,Indonesia,-0.3364,0.1762,0.0562,*,-0.6817,0.009,195
+MYS,Malaysia,-0.3703,0.5357,0.4894,,-1.4203,0.6797,195
+PHL,Philippines,-0.315,0.3017,0.2964,,-0.9063,0.2763,195

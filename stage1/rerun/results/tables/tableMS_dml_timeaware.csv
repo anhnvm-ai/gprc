@@ -1,0 +1,11 @@
+term,scheme,theta,se,p_value,n_obs,signif
+Volatility persistence,shuffled,0.4646,0.037,0.0,946,***
+Volatility persistence,blocked,0.4974,0.0393,0.0,780,***
+GPRC,shuffled,-0.0581,0.0274,0.0342,946,**
+GPRC,blocked,-0.0938,0.0299,0.0017,780,***
+VIX (global risk),shuffled,0.0682,0.0337,0.0431,946,**
+VIX (global risk),blocked,0.1397,0.0293,0.0,780,***
+FX shock,shuffled,0.0857,0.0289,0.0031,946,***
+FX shock,blocked,0.1037,0.0306,0.0007,780,***
+GPRC x Stress,shuffled,-0.1592,0.07,0.0229,946,**
+GPRC x Stress,blocked,-0.2019,0.082,0.0138,780,**
