@@ -18,7 +18,7 @@ All relative paths in the code assume that commands are run from the root of the
 | `stage1/results/` | Reference values used by the reproduction test |
 | `config/`, `src/`, `scripts/` | Data download, panel construction and the earlier analysis scripts |
 | `extra/` | Stress months by cross-fitting block (Sect. 6.2 of the paper); diagnostics on tails and serial dependence (`diag_round3_premise.py`, exploratory) |
-| `docs/analysis_plan/` | Analysis plan (English translation), its provenance and the addendum for the analyses added in version 1.1 of the paper |
+| `docs/analysis_plan/` | Analysis plan (English translation), its provenance, and the two addenda for the analyses added in versions 1.1 and 1.2 of the paper, with their results |
 
 ## 2. Data
 
@@ -57,6 +57,7 @@ already present, so delete a result file to force a full rerun.
 | Expanding-window standardisation (Sect. 6.2, exploratory) | `python stage2/analysis/a7_expanding_z.py` | `qf_a7.json` |
 | Time-varying transition probabilities, economic value, specification curve, local projections | `python stage2/analysis/b_extras.py` | `qf_b.json` |
 | Further diagnostics | `python stage2/analysis/diag_extra.py` | `qf_diag.json` |
+| Influence of the five months with the most identifying variation (Sect. 6.3, second addendum, exploratory) | `python stage2/analysis/diag_influence.py` (about 5 minutes) | `qf_influence.json`, `tables/influential_months.csv` |
 | Stress months by cross-fitting block (Sect. 6.2) | `python extra/diag_balanced_blocks.py stage2` | printed; stored in `extra/diag_balanced_blocks.txt` |
 
 **Step C, optional: from raw downloads.**
@@ -82,9 +83,9 @@ ranking of Sect. 6.1, the onset logit of Sect. 7 and the permutation test of Sec
 The analysis plan of the new analyses was written after the baseline estimates were known and before the
 simulations and the new analyses were run. It is not a pre-registration. An English translation, its
 provenance and the list of later changes are in `docs/analysis_plan/`; the Vietnamese original is available
-from the corresponding author on request. An addendum fixes the analyses added in version 1.1 of the paper.
-It was committed to this repository before these analyses were run. Analyses added later are marked as
-exploratory in the code and in the paper.
+from the corresponding author on request. Two addenda fix the analyses added in versions 1.1 and 1.2 of
+the paper. Each was committed to this repository before its analyses were run. Analyses added later are
+marked as exploratory in the code and in the paper.
 
 ## 6. Licence
 
@@ -95,6 +96,6 @@ American Economic Review 112(4), 1194-1225, for the GPRC series.
 ## 7. Code assistance
 
 The code was written with the assistance of Claude (Anthropic) through Claude Code, and the authors
-reviewed it. The analysis plan and the addendum were drafted with the same assistant. One author approved
-the plan on 13 October 2026, and all authors approved the addendum on 27 October 2026. This is also stated
-in the paper.
+reviewed it. The analysis plan and the two addenda were drafted with the same assistant. One author
+approved the plan on 13 October 2026, and all authors approved both addenda on 27 October 2026. This is
+also stated in the paper.

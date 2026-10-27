@@ -6,6 +6,7 @@
 | `addendum_2026-10-27.md` | Plan of the additional analyses in version 1.1 of the paper, fixed before they were run |
 | `addendum_results.md` | Results of these analyses, read under the decision rules of the addendum |
 | `addendum2_2026-10-27_influential_months.md` | Second addendum: influence of the five months with the most identifying variation (exploratory), fixed before its analyses were run |
+| `addendum2_results.md` | Results of these analyses, read under the decision rules of the second addendum |
 
 ## Status of the analysis plan
 
@@ -36,6 +37,7 @@ From the internal project log and the times of the output files (local time, UTC
 | 27 Oct 2026, 12:15 | Addendum approved by all authors and published, before its analyses were run (see the commit history) |
 | 27 Oct 2026, 12:27 to 13:48 | Analyses of the addendum run (output files in `stage2/results/mc/`); results in `addendum_results.md` |
 | 27 Oct 2026, 15:12 | Second addendum approved by all authors and published, before its analyses were run (see the commit history) |
+| 27 Oct 2026, 15:19 to 15:25 | Analyses of the second addendum run. A first run stopped at the check of the five months, before any estimate (see `addendum2_results.md`). Results in `addendum2_results.md` |
 
 ## Changes after the plan
 
