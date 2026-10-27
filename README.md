@@ -17,7 +17,8 @@ All relative paths in the code assume that commands are run from the root of the
 | `stage1/rerun/` | Code, configuration and outputs of that rerun (figures, onset logit, permutation test, specification curve) |
 | `stage1/results/` | Reference values used by the reproduction test |
 | `config/`, `src/`, `scripts/` | Data download, panel construction and the earlier analysis scripts |
-| `extra/` | Stress months by cross-fitting block (Sect. 6.2 of the paper) |
+| `extra/` | Stress months by cross-fitting block (Sect. 6.2 of the paper); diagnostics on tails and serial dependence (`diag_round3_premise.py`, exploratory) |
+| `docs/analysis_plan/` | Analysis plan (English translation), its provenance and the addendum for the analyses added in version 1.1 of the paper |
 
 ## 2. Data
 
@@ -78,8 +79,11 @@ ranking of Sect. 6.1, the onset logit of Sect. 7 and the permutation test of Sec
 ## 5. Analysis plan
 
 The analysis plan of the new analyses was written after the baseline estimates were known and before the
-simulations and the new analyses were run. It is available from the corresponding author on request.
-Analyses added later are marked as exploratory in the code and in the paper.
+simulations and the new analyses were run. It is not a pre-registration. An English translation, its
+provenance and the list of later changes are in `docs/analysis_plan/`; the Vietnamese original is available
+from the corresponding author on request. An addendum fixes the analyses added in version 1.1 of the paper.
+It was committed to this repository before these analyses were run. Analyses added later are marked as
+exploratory in the code and in the paper.
 
 ## 6. Licence
 
@@ -90,4 +94,6 @@ American Economic Review 112(4), 1194-1225, for the GPRC series.
 ## 7. Code assistance
 
 The code was written with the assistance of Claude (Anthropic) through Claude Code, and the authors
-reviewed it. This is also stated in the paper.
+reviewed it. The analysis plan and the addendum were drafted with the same assistant. One author approved
+the plan on 13 October 2026, and all authors approved the addendum on 27 October 2026. This is also stated
+in the paper.
