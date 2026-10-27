@@ -30,7 +30,9 @@ import qflib as q  # noqa: E402
 OUT = q.RES / "qf_influence.json"
 CSV = q.RES / "tables" / "influential_months.csv"
 B_WILD, SEED = 999, 42
-# set T of the addendum: month -> partial leverage rounded to 3 decimals
+# set T of the addendum, in its order: month -> partial leverage as printed there. The addendum prints
+# 0.082 for 2010-05; the value is 0.08146 (0.0815 rounded again to 0.082 when the table was written).
+# The check therefore requires the same months in the same order and each q within 0.001.
 T_ADDENDUM = {"2026-03": 0.279, "2010-05": 0.082, "2025-04": 0.076, "2021-02": 0.053, "2010-04": 0.038}
 MIN_STRESS = (3, 5, 7)
 
@@ -81,8 +83,8 @@ def dml_without(p: pd.DataFrame, drop) -> dict:
 
 
 def block_check(p: pd.DataFrame, lev: pd.DataFrame) -> dict:
-    top = {ym(m): round(float(v), 3) for m, v in lev["q"].head(5).items()}
-    if top != T_ADDENDUM:
+    top = {ym(m): float(v) for m, v in lev["q"].head(5).items()}
+    if list(top) != list(T_ADDENDUM) or max(abs(top[k] - T_ADDENDUM[k]) for k in top) > 0.001:
         raise SystemExit(f"set T differs from the addendum: {top}")
     base = q.load_json(q.RES / "qf_a6.json")["baseline"]
     o = ols_without(p, [])
