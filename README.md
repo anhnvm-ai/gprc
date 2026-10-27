@@ -49,7 +49,7 @@ already present, so delete a result file to force a full rerun.
 |---|---|---|
 | Sect. 5 and Table 2; sizes in Table 4 | `python stage2/analysis/a1_montecarlo.py calibrate`, then `run`, `gr_check`, `gr --gr-reps 1000`, `supp`, `supp_summary`, `summarize` (several hours; `--workers 8`) | `qf_a1.json`, `qf_a1_supp.json`, `mc/` |
 | Stress designs H and S of the addendum (Sect. 5) | `python stage2/analysis/a1b_mc_stress.py check`, then `calibrate_nu`, `run`, `summarize` | `qf_a1b.json`, `mc/stress/`, `tables/mc_stress.csv` |
-| Real-time regime (Sects. 4.2 and 6.2) | `python stage2/analysis/a2_realtime.py` | `qf_a2.json`, `qf_a2_rt_probs.parquet` |
+| Real-time regime (Sects. 4.1 and 6.2) | `python stage2/analysis/a2_realtime.py` | `qf_a2.json`, `qf_a2_rt_probs.parquet` |
 | Table 6; time-aware channel estimates in Sect. 6.1 | `python stage2/analysis/a3_learners.py` | `qf_a3.json` |
 | Table 8 and Sect. 7 (forecasts) | `python stage2/analysis/a4_forecast.py` | `qf_a4.json` |
 | Cross-fitting schemes | `python stage2/analysis/a5_crossfit.py` | `qf_a5.json` |

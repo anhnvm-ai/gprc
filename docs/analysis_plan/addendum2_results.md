@@ -54,7 +54,7 @@ Regime labels, z-scores, controls and market dummies as in the baseline. p: rest
 ## Reading under the decision rules of the addendum
 
 - r = β̂₃ without the five months / β̂₃ of the baseline = +0.033 / -0.171 = -0.195. Case C: the association is concentrated in these months; abstract and conclusion reframed.
-- In the paper, the abstract, the introduction, Sect. 6.3 and Sect. 8 describe the association as concentrated in these months rather than spread across stress months.
+- In the paper, the abstract, the introduction, Sect. 6.3, Sect. 8 and Sect. 9 describe the association as concentrated in these months rather than spread across stress months.
 - I1: the five single-month drops give -0.187 to -0.110. None changes the sign.
 - I3: time-aware DML without the five months gives -0.053, reported next to I2.
 - I4: the leave-one-month-out estimates range from -0.196 to -0.110.

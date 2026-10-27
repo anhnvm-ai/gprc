@@ -54,14 +54,14 @@ All are labelled exploratory in the code and in the paper, or stated in the pape
 | Plan item | Paper | Result file in `stage2/results/` |
 |---|---|---|
 | P1 Main estimand, OLS and DML | Sect. 4.1; Tables 3 and 5 | `qf_a6.json`, `qf_a3.json` |
-| P2 Ex-post and real-time regimes, thresholds 0.4 and 0.6 | Sects. 4.2 and 6.2; Table 5 | `qf_a2.json`, `qf_a6.json` |
-| P3 Choice of the inference procedure | Sects. 4.3 and 5; Tables 2 and 4 | `qf_a1.json` (key `P3`) |
+| P2 Ex-post and real-time regimes, thresholds 0.4 and 0.6 | Sects. 4.1 and 6.2; Table 5 | `qf_a2.json`, `qf_a6.json` |
+| P3 Choice of the inference procedure | Sects. 4.2 and 5; Tables 2 and 4 | `qf_a1.json` (key `P3`) |
 | P4 Monte Carlo cells and procedures | Sect. 5; Tables 2 and 4 | `qf_a1.json`, `mc/` |
 | P4 Generated-regressor bootstrap | Sect. 5; Table 4 | `qf_a1.json`, `mc/gr/` |
 | P5 Mechanical bias and simulation-based p-value | Sect. 5 | `qf_a1.json` (key `P5`) |
 | P6 Learners and control sets | Sect. 6.3; Table 6 | `qf_a3.json` |
 | P6 α path | Not in the paper | `qf_a3.json` (key `alpha_path`) |
-| P7 Cross-fitting schemes | Shuffled and time-aware schemes in Sects. 4.2 and 6 | `qf_a5.json` (all schemes and K) |
+| P7 Cross-fitting schemes | Shuffled and time-aware schemes in Sects. 4.1 and 6 | `qf_a5.json` (all schemes and K) |
 | P8 Forecasts | Sect. 7; Table 8 | `qf_a4.json` (all tests) |
 | P9 B1 Local projections | Sect. 8 | `qf_b.json` (key `lp`) |
 | P9 B2 Other volatility measures | Sect. 6.3 | `qf_b.json` (key `altvol`) |
