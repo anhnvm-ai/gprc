@@ -11,7 +11,9 @@ faster in stress (an alternative explanation)?
 Subcommands (all resumable; every output is cached):
   calibrate          data moments -> DGP parameters (results/mc/calibration.json)
   run [--pilot]      simulate + estimate; shards of 50 replications (results/mc[_pilot]/cell*/)
-  gr                 MS-re-estimating bootstrap on cell 3, reps 0-199 (results/mc/gr/)
+  gr [--gr-reps N]   MS-re-estimating bootstrap on cell 3, reps 0 to N-1 (results/mc/gr/); N = 200 in the
+                     analysis plan, 1000 in the addendum of 27/10/2026
+  gr_check           recompute reps 0-9 of the MS-re-estimating bootstrap; they must equal shard 0
   summarize          tables, decision rules P3/P5, figure (results/qf_a1.json, results/tables/)
 """
 from __future__ import annotations
@@ -472,9 +474,9 @@ def gr_shard(k: int, cal: dict) -> str:
     return f"gr shard {k}: done"
 
 
-def gr(workers: int) -> None:
+def gr(workers: int, reps: int = 200) -> None:
     cal = calibrate()
-    pool_map(gr_shard, [(k, cal) for k in range(20) if not (MC / "gr" / f"shard_{k:03d}.parquet").exists()],
+    pool_map(gr_shard, [(k, cal) for k in range(reps // 10) if not (MC / "gr" / f"shard_{k:03d}.parquet").exists()],
              workers)
     # the same bootstrap on the real data (B = 999)
     real = MC / "gr_real.json"
@@ -484,7 +486,33 @@ def gr(workers: int) -> None:
     print("real data:", q.load_json(real))
 
 
+def gr_check() -> dict:
+    """Addendum of 27/10/2026, R1: reps 0-9 recomputed with the current code must equal shard 0."""
+    cal = calibrate()
+    old = pd.read_parquet(MC / "gr" / "shard_000.parquet").reset_index(drop=True)
+    new = pd.DataFrame([gr_one(r, cal) for r in range(10)])
+    cols = [c for c in old.columns if c in new.columns]
+    diff = {c: float(np.nanmax(np.abs(old[c].astype(float) - new[c].astype(float)))) for c in cols
+            if not old[c].equals(new[c])}
+    res = {"identical": not diff and len(cols) == len(old.columns) == len(new.columns), "columns": cols,
+           "max_abs_diff_of_differing_columns": diff}
+    q.save_json(res, MC / "gr_check.json")
+    print(res)
+    return res
+
+
 # ============================================================================= summary
+def rate_ci(reject) -> dict:
+    """Rejection rate with its Monte Carlo standard error and 95% Wilson interval (addendum, 27/10/2026)."""
+    x = np.asarray(reject, dtype=bool)
+    n, k, z = len(x), int(x.sum()), 1.959964
+    r = k / n
+    centre = (r + z * z / (2 * n)) / (1 + z * z / n)
+    half = z * np.sqrt(r * (1 - r) / n + z * z / (4 * n * n)) / (1 + z * z / n)
+    return {"n": n, "rejections": k, "rate": r, "mc_se": float(np.sqrt(r * (1 - r) / n)),
+            "wilson95": [float(centre - half), float(centre + half)]}
+
+
 def load_cells(out_dir: Path) -> pd.DataFrame:
     parts = [pd.read_parquet(f) for f in sorted(out_dir.glob("cell*/shard_*.parquet"))]
     return pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()
@@ -552,10 +580,14 @@ def summarize(pilot: bool = False) -> dict:
                  "simulation_p": sim_p}
     gr_parts = sorted((MC / "gr").glob("shard_*.parquet")) if not pilot else []
     if gr_parts:
-        gdf = pd.concat([pd.read_parquet(f) for f in gr_parts])
-        gdf = gdf[gdf["ok"]]
-        res["gr_bootstrap_cell3"] = {"n": int(len(gdf)), "size_5pct": float((gdf["gr_p"] < 0.05).mean()),
+        gall = pd.concat([pd.read_parquet(f) for f in gr_parts])
+        gdf = gall[gall["ok"].astype(bool)]
+        res["gr_bootstrap_cell3"] = {"n": int(len(gdf)), "n_total": int(len(gall)),
+                                     "n_ms_failed": int(len(gall) - len(gdf)),
+                                     "size_5pct": float((gdf["gr_p"] < 0.05).mean()),
+                                     "size_5pct_ci": rate_ci(gdf["gr_p"] < 0.05),
                                      "size_dk4_same_reps": float((gdf["dk4_p"] < 0.05).mean()),
+                                     "size_dk4_same_reps_ci": rate_ci(gdf["dk4_p"] < 0.05),
                                      "mean_se_gr": float(gdf["gr_se"].mean()),
                                      "median_se_gr": float(gdf["gr_se"].median()),
                                      "mean_se_gr_iqr": float(gdf["gr_se_iqr"].mean()) if "gr_se_iqr" in gdf else None,
@@ -612,9 +644,11 @@ def figure(df: pd.DataFrame) -> None:
 # ============================================================================= main
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["calibrate", "run", "gr", "summarize", "timing", "supp", "supp_summary"])
+    ap.add_argument("cmd", choices=["calibrate", "run", "gr", "gr_check", "summarize", "timing", "supp",
+                                    "supp_summary"])
     ap.add_argument("--pilot", action="store_true")
     ap.add_argument("--workers", type=int, default=14)
+    ap.add_argument("--gr-reps", type=int, default=200)
     ap.add_argument("--cells", default="0-8")
     a = ap.parse_args()
     lo, hi = (int(x) for x in a.cells.split("-")) if "-" in a.cells else (int(a.cells), int(a.cells))
@@ -641,7 +675,9 @@ if __name__ == "__main__":
     elif a.cmd == "run":
         run(a.pilot, a.workers, list(range(lo, hi + 1)))
     elif a.cmd == "gr":
-        gr(a.workers)
+        gr(a.workers, a.gr_reps)
+    elif a.cmd == "gr_check":
+        gr_check()
     elif a.cmd == "supp":
         supp(a.workers)
     elif a.cmd == "supp_summary":
